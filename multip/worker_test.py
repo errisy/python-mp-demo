@@ -1,7 +1,6 @@
 from absl.testing import absltest
 import worker
 import os
-import sys
 import test_util
 
 class TestWorker(absltest.TestCase):

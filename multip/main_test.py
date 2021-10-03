@@ -1,5 +1,4 @@
 from absl.testing import absltest
-import worker
 import os
 import test_util
 import main
