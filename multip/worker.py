@@ -17,7 +17,7 @@ if __name__ == '__main__':
     from absl import flags, app
     VALUE = flags.DEFINE_string('value', 'jack', 'the name of person')
     METHOD = flags.DEFINE_string('method', 'sleep', 'the action to do')
-    INTERVAL = flags.DEFINE_integer('interval', 3, 'interval between actions')
+    INTERVAL = flags.DEFINE_float('interval', 3, 'interval between actions')
     REPEAT = flags.DEFINE_integer('repeat', 5, 'how many repeats of actions')
     LOG_FILE_PATH = flags.DEFINE_string(
         'log_file_path',
