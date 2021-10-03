@@ -4,7 +4,6 @@ import os
 import datetime
 from typing import List, Sequence
 from termcolor import colored
-from absl import app, flags
 
 def get_available_log_file(base_file_name: str):
     i = 0
@@ -41,6 +40,7 @@ def run_multiple_workers(base_path: str):
 
 # the following will run when you are running this file as entry.
 if __name__ == '__main__':
+    from absl import app, flags
     BASE_PATH = flags.DEFINE_string('base_path', os.getenv('PYTHONPATH'), 'base path to run app')
     def main(argv: Sequence[str]):
         run_multiple_workers(base_path=BASE_PATH.value)
