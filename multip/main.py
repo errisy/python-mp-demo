@@ -2,8 +2,9 @@ import multiprocessing
 import worker
 import os
 import datetime
-from typing import List
+from typing import List, Sequence
 from termcolor import colored
+from absl import app, flags
 
 def get_available_log_file(base_file_name: str):
     i = 0
@@ -42,8 +43,10 @@ def run_multiple_workers(base_path: str):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    base_path = os.getenv('PYTHONPATH')
-    run_multiple_workers(base_path=base_path)
+    def main(argv: Sequence[str]):
+        BASE_PATH = flags.DEFINE_string('base_path', os.getenv('PYTHONPATH'), 'base path to run app')
+        run_multiple_workers(base_path=BASE_PATH.value)
+    app.run(main)
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
