@@ -13,6 +13,7 @@ def process_entry(value: str, method: str, interval: int, repeat: int, log_file_
         time.sleep(interval)
         print(f'Entry {value}@{method}: {i} of {repeat}')
 
+# the following will run when you are running this file as entry.
 if __name__ == '__main__':
     def main(argv: Sequence[str]):
         VALUE = flags.DEFINE_string('value', 'jack', 'the name of person')

@@ -39,14 +39,9 @@ def run_multiple_workers(base_path: str):
     for process in processes:
         process.join()
 
-
-
-# Press the green button in the gutter to run the script.
+# the following will run when you are running this file as entry.
 if __name__ == '__main__':
+    BASE_PATH = flags.DEFINE_string('base_path', os.getenv('PYTHONPATH'), 'base path to run app')
     def main(argv: Sequence[str]):
-        BASE_PATH = flags.DEFINE_string('base_path', os.getenv('PYTHONPATH'), 'base path to run app')
         run_multiple_workers(base_path=BASE_PATH.value)
     app.run(main)
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
